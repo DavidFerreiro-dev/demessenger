@@ -84,4 +84,5 @@ def handle_message(data):
 
 if __name__ == '__main__':
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    socketio.run(app, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render asigna el puerto
+    socketio.run(app, host='0.0.0.0', port=port)
