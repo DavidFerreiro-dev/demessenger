@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Chat Retro - Menú</title>
+<style>
+  body {
+    background-color: #f3e6c6;
+    font-family: "Courier New", Courier, monospace;
+    color: #3b2f2f;
+    text-align: center;
+    padding: 50px;
+  }
+  input, button {
+    font-family: monospace;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    margin: 10px;
+    border: 2px groove #a67c00;
+    background-color: #fff8dc;
+  }
+  button {
+    cursor: pointer;
+  }
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <h1>DeMESSENGER</h1>
+  <form method="POST" action="/">
+    <input type="text" name="username" placeholder="Tu nombre" required /><br />
+    <input type="text" name="room" placeholder="Nombre de sala" required /><br />
+    <button type="submit">Entrar a la sala</button>
+  </form>
+  {% if error %}
+  <p class="error">{{ error }}</p>
+  {% endif %}
+</body>
+</html>
